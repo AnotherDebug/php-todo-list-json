@@ -9,7 +9,10 @@ $list = json_decode($json_string);
 
 
 if(isset($_POST['taskItem'])){
-    var_dump('OK LA CHIAMATA ESISTE');
+
+    //pusho taskItem in una variabile
+    $list[] = $_POST['taskItem'];
+    file_put_contents('todoList.json', json_encode($list));
 }
 
 
