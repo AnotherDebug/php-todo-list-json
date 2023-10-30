@@ -40,8 +40,9 @@
         <div class="task">
             <ul>
 
-                <li class="d-flex">
-                    <span>{{prova}}</span>
+                <li class="d-flex"
+                v-for="(item, index) in list">
+                    <span>{{item}}</span>
                     <i class="fa-solid fa-trash"></i>
                 </li>
 
