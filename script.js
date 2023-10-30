@@ -4,7 +4,8 @@ createApp({
     data() {
         return {
             prova:'ciao',
-            list: []
+            list: [],
+            newTask: ''
         }
     },
     methods:{
@@ -14,6 +15,19 @@ createApp({
             .then(res => {
                 this.list = res.data 
                 console.log(this.list);
+            })
+            .catch(e => {
+                console.log(e);
+            })
+        },
+        addTask(){
+            console.log('task aggiunto');
+            const data = new FormData();
+            data.append('taskItem', this.newTask );
+
+            axios.post('server.php', data)
+            .then(res => {
+                console.log(res.data);
             })
             .catch(e => {
                 console.log(e);
