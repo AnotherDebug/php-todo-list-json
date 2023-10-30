@@ -8,7 +8,9 @@ $list = json_decode($json_string);
 
 
 
-
+if(isset($_POST['taskItem'])){
+    var_dump('OK LA CHIAMATA ESISTE');
+}
 
 
 
