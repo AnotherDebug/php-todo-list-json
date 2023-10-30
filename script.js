@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             prova:'ciao',
+            list: []
         }
     },
     methods:{
@@ -11,7 +12,8 @@ createApp({
             console.log('lista');
             axios.get('server.php')
             .then(res => {
-                console.log(res.data);
+                this.list = res.data 
+                console.log(this.list);
             })
             .catch(e => {
                 console.log(e);
