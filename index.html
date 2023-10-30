@@ -31,8 +31,8 @@
         </div>
 
         <div class="tasks d-flex">
-            <input type="text" placeholder="New Task">
-            <button class="btn">Aggiungi</button>
+            <input v-model.trim="newTask" class="form-control" type="text" placeholder="New Task">
+            <button @click="addTask" class="btn">Aggiungi</button>
         </div>
 
         <!-- <p class="error">Devi inserire almeno 5 caratteri</p> -->
