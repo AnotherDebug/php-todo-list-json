@@ -14,6 +14,10 @@
     <!-- Using Vue from CDN -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <!-- Axios -->
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+
     <link href="style.css" rel="stylesheet">
 </head>
 
@@ -27,8 +31,8 @@
         </div>
 
         <div class="tasks d-flex">
-            <input  type="text" placeholder="New Task">
-            <button  class="btn">Aggiungi</button>
+            <input type="text" placeholder="New Task">
+            <button class="btn">Aggiungi</button>
         </div>
 
         <!-- <p class="error">Devi inserire almeno 5 caratteri</p> -->
@@ -36,8 +40,8 @@
         <div class="task">
             <ul>
 
-                <li  class="d-flex">
-                    <span >{{prova}}</span>
+                <li class="d-flex">
+                    <span>{{prova}}</span>
                     <i class="fa-solid fa-trash"></i>
                 </li>
 

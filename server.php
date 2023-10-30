@@ -13,7 +13,7 @@ $list = json_decode($json_string);
 
 
 
-//trasformo l'array php in stringa.
+//trasformo il file php in json.
 header('Content-Type: application=json');
 
 //stampo la lista trasformata da array php a stringa.
