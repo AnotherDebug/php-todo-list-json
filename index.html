@@ -35,7 +35,7 @@
             <button @click="addTask" class="btn">Aggiungi</button>
         </div>
 
-        
+
         <p class="error" v-if="isError">Devi inserire almeno 5 caratteri!</p>
         <p v-else>{{message}}</p>
 
@@ -44,9 +44,7 @@
 
                 <li class="d-flex" v-for="(item, index) in list">
                     <span @click="item.done = !item.done" :class="{'done' : item.done}">{{item.task}}</span>
-                    <button v-if="item.done" @click="deleteTask(index)" class="btn">
-                        <i class="fa-solid fa-trash"></i>
-                    </button>
+                    <i v-if="item.done" @click="deleteTask(index)" class="fa-solid fa-trash"></i>
                 </li>
 
             </ul>
