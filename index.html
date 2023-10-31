@@ -40,10 +40,11 @@
         <div class="task">
             <ul>
 
-                <li class="d-flex"
-                v-for="(item, index) in list">
+                <li class="d-flex" v-for="(item, index) in list">
                     <span>{{item}}</span>
-                    <i class="fa-solid fa-trash"></i>
+                    <button @click="deleteTask(index)" class="btn">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
                 </li>
 
             </ul>
