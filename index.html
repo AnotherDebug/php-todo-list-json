@@ -41,8 +41,8 @@
             <ul>
 
                 <li class="d-flex" v-for="(item, index) in list">
-                    <span>{{item}}</span>
-                    <button @click="deleteTask(index)" class="btn">
+                    <span @click="item.done = !item.done" :class="{'done' : !item.done}">{{item.task}}</span>
+                    <button v-if="!item.done" @click="deleteTask(index)" class="btn">
                         <i class="fa-solid fa-trash"></i>
                     </button>
                 </li>
