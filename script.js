@@ -5,6 +5,8 @@ createApp({
     return {
       list: [],
       newTask: "",
+      message: "Inserisci un nuovo task che contenga almeno 5 caratteri",
+      isError: false
     };
   },
   methods: {
@@ -23,7 +25,10 @@ createApp({
       console.log("task aggiunto");
       const data = new FormData();
       data.append("taskItem", this.newTask);
-      axios
+
+      if(this.newTask.length > 5) {
+        this.isError;
+        axios
         .post("server.php", data)
         .then((res) => {
           this.list = res.data;
@@ -33,6 +38,10 @@ createApp({
         .catch((e) => {
           console.log(e);
         });
+      }else{
+        this.isError = true;
+      }
+      
     },
     deleteTask(index) {
         console.log('task eliminato');
