@@ -8,7 +8,7 @@ $list = json_decode($json_string);
 
 
 
-if(isset($_POST['taskItem'])){
+if (isset($_POST['taskItem'])) {
 
     //pusho taskItem in una variabile
     $list[] = $_POST['taskItem'];
@@ -16,10 +16,16 @@ if(isset($_POST['taskItem'])){
 }
 
 
+if (isset($_POST['deleteItem'])) {
+    $index = $_POST['deleteItem'];
+    array_splice($list, $index, 1);
+    file_put_contents('todoList.json', json_encode($list));
+}
+
 
 
 //trasformo il file php in json.
-header('Content-Type: application=json');
+header('Content-Type: application/json');
 
 //stampo la lista trasformata da array php a stringa.
 echo json_encode($list);
