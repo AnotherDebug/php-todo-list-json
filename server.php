@@ -12,7 +12,7 @@ if (isset($_POST['taskItem'])) {
     //se taskItem esiste, creo un nuovo oggetto task da pushare dentro la lista, ovvero il mio array di oggetti php
     $newTask = [
         'task' => $_POST['taskItem'],
-        'done' => "false"
+        'done' => false
     ];
 
     //pusho nella lista
