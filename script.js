@@ -23,7 +23,6 @@ createApp({
       console.log("task aggiunto");
       const data = new FormData();
       data.append("taskItem", this.newTask);
-
       axios
         .post("server.php", data)
         .then((res) => {

@@ -9,9 +9,14 @@ $list = json_decode($json_string);
 
 
 if (isset($_POST['taskItem'])) {
+    //se taskItem esiste, creo un nuovo oggetto task da pushare dentro la lista, ovvero il mio array di oggetti php
+    $newTask = [
+        'task' => $_POST['taskItem'],
+        'done' => "false"
+    ];
 
-    //pusho taskItem in una variabile
-    $list[] = $_POST['taskItem'];
+    //pusho nella lista
+    $list[] = $newTask;
     file_put_contents('todoList.json', json_encode($list));
 }
 
